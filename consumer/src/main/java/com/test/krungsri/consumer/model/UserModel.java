@@ -28,6 +28,7 @@ public class UserModel {
 	private BigDecimal salary;
 	
 	@Temporal(TemporalType.TIMESTAMP)
+	@Column(name = "REGISTER_DATE")
 	private Date registerDate;
 	
 	@Column(name = "MEMBER_TYPE")
