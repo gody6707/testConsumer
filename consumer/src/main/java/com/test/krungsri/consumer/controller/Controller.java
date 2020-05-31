@@ -27,18 +27,6 @@ public class Controller {
 	@Autowired
 	private JwtTokenUtil jwtTokenUtil;
 	
-	@RequestMapping({ "/test" })
-	public String testToken(@RequestHeader("Authorization") String auth) {
-		String jwtToken = null;
-		if (auth != null && auth.startsWith("Bearer ")) {
-			jwtToken = auth.substring(7);
-			jwtTokenUtil.getUsernameFromToken(jwtToken);
-			System.out.println(jwtTokenUtil.getUsernameFromToken(jwtToken));
-		}
-		
-		return null;
-	}
-	
 	@RequestMapping(value = "/register", method = RequestMethod.POST)
 	public String register(@RequestBody UserModel userModel) throws Exception { 
 		
